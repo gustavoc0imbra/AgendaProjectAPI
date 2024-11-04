@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="MenuLayout/menulayout.html :: head">
+</head>
+<body>
+<div th:replace="MenuLayout/menulayout.html :: menu"></div>
+
+<dialog class="w-50 h-25 bg-primary-subtle border-primary rounded" id="modalDeleta">
+    <button id="btnModalDeleta" class="btn btn-danger" type="button">&Chi; Sair</button>
+</dialog>
+
+<div class="container d-flex bg-primary-subtle flex-column my-5">
+    <a class="btn btn-primary justify-end w-25 my-2" th:href="@{/servico}">Adicionar Serviço</a>
+    <table class="table table-hover my-2">
+        <thead>
+        <tr class="table-dark">
+            <th scope="col">#</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Valor</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="servico : ${servicos}">
+            <th scope="row" th:text="${servico.id}"></th>
+            <td th:text="${servico.nome}"></td>
+            <td th:text="${#numbers.formatCurrency(servico.valor)}"></td>
+            <td class="d-flex gap-2 p-2">
+                <a class="btn btn-warning" th:href="@{/servico/{id}(id=${servico.id})}">Editar</a>
+                <a class="btn btn-danger" onclick="perguntaMensagem()" th:href="@{/servicoDel/{id}(id=${servico.id})}">Excluir</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<footer th:replace="MenuLayout/menulayout :: rodape"></footer>
+<script>
+    const modalDeleta = document.getElementById("modalDeleta");
+    const btnModalDeleta = document.getElementById("btnModalDeleta");
+
+    function perguntaMensagem(event) {
+
+        if(!confirm("Deseja realmente deletar este serviço?")) {
+            event.preventDefault();
+        }
+
+        /*modalDeleta.showModal();*/
+    }
+
+    /*btnModalDeleta.addEventListener("click", () => {
+       modalDeleta.close();
+    });*/
+
+</script>
+</body>
+</html>
