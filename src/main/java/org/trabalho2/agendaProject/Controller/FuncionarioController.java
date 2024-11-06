@@ -1,6 +1,7 @@
 package org.trabalho2.agendaProject.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,11 +19,13 @@ public class FuncionarioController {
     private static final String ENDPOINT = "/api/funcionarios";
 
     @GetMapping(ENDPOINT)
+    @CrossOrigin
     public List<FuncionarioRespostaDTO> findAll() {
         return funcionarioService.findAll();
     }
 
     @GetMapping(ENDPOINT + "/{id}")
+    @CrossOrigin
     public FuncionarioRespostaDTO findOne(@PathVariable("id") Integer id) {
         return funcionarioService.findById(id);
     }
