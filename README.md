@@ -4,7 +4,7 @@ Projeto desenvolvido na disciplina de Desenvolvimento Web I, onde é uma aplica�
 ## Arquitetura do projeto:
 ![image](https://github.com/user-attachments/assets/cb023c6f-f62e-4e95-b4be-0ff55b0cbd01)
 
-## Stack utilizada:
+## Stack utilizada neste repositório:
 - Java ☕ (Springboot) no backend
 - h2 como banco de dados
 
@@ -14,7 +14,7 @@ Projeto desenvolvido na disciplina de Desenvolvimento Web I, onde é uma aplica�
 - Consome o mesmo banco de dados que a aplicação principal
 
 ### Links para respectivos repositórios:
-### Api project: [Agenda Project API](https://github.com/gustavoc0imbra/AgendaProjectAPI) 💻</br>
+### Agenda project: [Agenda Project Principal](https://github.com/gustavoc0imbra/AgendaProject) 📠</br>
 ### Frontend relatorios: [Agenda Project Frontend relatórios](https://github.com/gustavoc0imbra/AgendaProjectFront) 📝
 
 ## Como instalar:
